@@ -1,0 +1,33 @@
+Source: sphinx-autodoc-annotation
+Maintainer: Steve Kondik <shade@chemlab.org>
+Section: python
+Priority: optional
+Build-Depends: dh-python, python3-setuptools, python3-all, debhelper (>= 9)
+Standards-Version: 3.9.6
+Homepage: https://github.com/hsoft/sphinx-autodoc-annotation
+
+Package: python3-sphinx-autodoc-annotation
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends}
+Description: Use Python 3 annotations in sphinx-enabled docstrings
+ sphinx-autodoc-annotation
+ =========================
+ .
+ *Use Python 3 annotations in sphinx-enabled docstrings*
+ .
+ If you're on Python 3 and writing sphinx-enabled docstrings, you might feel like doing
+ needless work when typing ``:type arg:`` or ``:rtype:`` directives. After all, why not use
+ annotations for this?
+ .
+ Sure, ``:param str arg: description`` is not a lot of work, but when you want to document your
+ argument as a specific class for which you have a ``:class:`` link, then you need to use ``:type:``
+ and it's cumbersome. By using this sphinx extension, you can turn this::
+ .
+     def f(a):
+         """Do something.
+ .
+         :param a: description for a
+         :type a: :class:`ClassForA`
+         :rtype: str
+         """
+
